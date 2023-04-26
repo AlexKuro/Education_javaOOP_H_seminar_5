@@ -1,32 +1,22 @@
 package org.example;
 
-public class MathSign {
+public class ViewSign {
 
-    public String HeadingMath(Integer n){
+    public String HeadingPrint(Integer n) {
         String s = "";
         if (n == 1) s = "- Сложение -";
         if (n == 2) s = "- Вычитание -";
         if (n == 3) s = "- Умножение -";
         if (n == 4) s = "- Деление -";
-        if (n == 5) s = "- Бинарный перевод -";
-//
-//        switch (n){
-//            case 1:
-//                s = "- Сложение -";
-//                break;
-//            case 2:
-//                s = "- Вычитание -";
-//                break;
-//            case 3:
-//                s = "- Умножение -";
-//                break;
-//            case 4:
-//                s = "- Деление -";
-//                break;
-//            case 5:
-//                s = "- Бинарный перевод -";
-//                break;
-//        }
+        return s;
+    }
+
+    public String SignPrint(Integer n) {
+        String s = "";
+        if (n == 1) s = "Сложение чисел:";
+        if (n == 2) s = "Вычитание чисел:";
+        if (n == 3) s = "Умножение чисел:";
+        if (n == 4) s = "Деление чисел:";
         return s;
     }
 
