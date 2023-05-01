@@ -1,6 +1,8 @@
 package org.example;
 
 
+import org.jetbrains.annotations.NotNull;
+
 public class View implements ViewInterface {
 
     ViewModel viewModel = new ViewModel();
@@ -18,10 +20,9 @@ public class View implements ViewInterface {
         System.out.println("\tНепростой калькулятор - - нажмите '2'");
         System.out.println("\tВыход из программы  - - - нажмите '9'");
         System.out.print("\nВведите число -> ");
-        n = iScanner.nextInt();
+        n = intScanner.nextInt();
         return n;
     }
-
 
     public Integer interface_2() {
         calculator.setFlag(true);
@@ -35,7 +36,7 @@ public class View implements ViewInterface {
         System.out.println("\tВыход в главное меню  - - нажмите '8'");
         System.out.println("\tВыход из программы  - - - нажмите '9'");
         System.out.print("\nВведите число -> ");
-        n = iScanner.nextInt();
+        n = intScanner.nextInt();
         return n;
     }
 
@@ -48,12 +49,12 @@ public class View implements ViewInterface {
         System.out.println("\tВыход в главное меню  - - нажмите '8'");
         System.out.println("\tВыход из программы  - - - нажмите '9'");
         System.out.print("\nВведите число -> ");
-        n = iScanner.nextInt();
+        n = intScanner.nextInt();
         return n;
     }
 
 
-    public void choice_1(Integer n) {
+    public void choice_1(@NotNull Integer n) {
         switch (n) {
             case 1:
                 choice_2(interface_2());
@@ -63,10 +64,7 @@ public class View implements ViewInterface {
                 rationalNum.setFlRn(true);
                 break;
             case 9:
-                System.out.print("Завершение программы 'КАЛЬКУЛЯТОР'.\n\n");
-                iScanner.close();
-                calculator.setFlag(false);
-                logCalc.setLogger("Завершение программы 'КАЛЬКУЛЯТОР'.");
+                endProg();
                 break;
             default:
                 System.out.print("Формат ввода неверный!\n");
@@ -74,7 +72,7 @@ public class View implements ViewInterface {
         }
     }
 
-    public void choice_2(Integer n) {
+    public void choice_2(@NotNull Integer n) {
         switch (n) {
             case 1, 2, 3, 4:
                 viewModel.model_1(n);
@@ -85,22 +83,28 @@ public class View implements ViewInterface {
                 System.out.println("\tЧИСЛО тип Double  - - - - нажмите '2'");
                 System.out.println("\tСИМВОЛ тип String - - - - нажмите '3'");
                 System.out.print("Введите число -> ");
-                n = iScanner.nextInt();
+                n = intScanner.nextInt();
                 switch (n) {
                     case 1:
                         System.out.print("Введите ЧИСЛО тип Integer -> ");
-                        Object q = iScanner.nextInt();
-                        System.out.println("Бинарный перевод: " + q + " --> " + calculator.binObg(q));
+                        Object q = intScanner.nextInt();
+                        String st = "Бинарный перевод: " + q + " --> " + calculator.binObg(q);
+                        System.out.println(st);
+                        logCalc.setLogger(st);
                         break;
                     case 2:
                         System.out.print("Введите ЧИСЛО тип Double -> ");
-                        q = iScanner.nextDouble();
-                        System.out.println("Бинарный перевод: " + q + " --> " + calculator.binObg(q));
+                        q = intScanner.nextDouble();
+                        st = "Бинарный перевод: " + q + " --> " + calculator.binObg(q);
+                        System.out.println(st);
+                        logCalc.setLogger(st);
                         break;
                     case 3:
                         System.out.print("Введите СИМВОЛ тип String -> ");
-                        q = iScanner.next();
-                        System.out.println("Бинарный перевод: " + q + " --> " + calculator.binObg(q));
+                        q = intScanner.next();
+                        st = "Бинарный перевод: " + q + " --> " + calculator.binObg(q);
+                        System.out.println(st);
+                        logCalc.setLogger(st);
                         break;
                     default:
                         System.out.print("Формат ввода неверный!\n");
@@ -111,11 +115,7 @@ public class View implements ViewInterface {
                 choice_1(interface_1());
                 break;
             case 9:
-                System.out.print("Завершение программы 'КАЛЬКУЛЯТОР'.\n\n");
-                iScanner.close();
-                scanner.close();
-                calculator.setFlag(false);
-                logCalc.setLogger("Завершение программы 'КАЛЬКУЛЯТОР'.");
+                endProg();
                 break;
             default:
                 System.out.print("Формат ввода неверный!\n");
@@ -123,7 +123,7 @@ public class View implements ViewInterface {
         }
     }
 
-    public void choice_3(Integer n) {
+    public void choice_3(@NotNull Integer n) {
         switch (n) {
             case 1:
                 choice_3_1(viewRational.interface_3_1());
@@ -133,13 +133,9 @@ public class View implements ViewInterface {
                 break;
             case 8:
                 choice_1(interface_1());
-//                    rationalNum.setFlRn(false);
                 break;
             case 9:
-                System.out.print("Завершение программы 'КАЛЬКУЛЯТОР'.\n\n");
-                iScanner.close();
-                scanner.close();
-                calculator.setFlag(false);
+                endProg();
                 break;
             default:
                 System.out.print("Формат ввода неверный!\n");
@@ -147,7 +143,7 @@ public class View implements ViewInterface {
         }
     }
 
-    public void choice_3_1(Integer n) {
+    public void choice_3_1(@NotNull Integer n) {
         switch (n) {
             case 1, 2, 3, 4:
                 viewModel.model_2(n);
@@ -156,11 +152,7 @@ public class View implements ViewInterface {
                 choice_1(interface_1());
                 break;
             case 9:
-                System.out.print("Завершение программы 'КАЛЬКУЛЯТОР'.\n\n");
-                iScanner.close();
-                scanner.close();
-                calculator.setFlag(false);
-                logCalc.setLogger("Завершение программы 'КАЛЬКУЛЯТОР'.");
+                endProg();
                 break;
             default:
                 System.out.print("Формат ввода неверный!\n");
@@ -168,7 +160,7 @@ public class View implements ViewInterface {
         }
     }
 
-    public void choice_3_2(Integer n) {
+    public void choice_3_2(@NotNull Integer n) {
         switch (n) {
             case 1, 2, 3, 4:
                 viewModel.model_3(n);
@@ -177,11 +169,7 @@ public class View implements ViewInterface {
                 choice_1(interface_1());
                 break;
             case 9:
-                System.out.print("Завершение программы 'КАЛЬКУЛЯТОР'.\n\n");
-                iScanner.close();
-                scanner.close();
-                calculator.setFlag(false);
-                logCalc.setLogger("Завершение программы 'КАЛЬКУЛЯТОР'.");
+                endProg();
                 break;
             default:
                 System.out.print("Формат ввода неверный!\n");
@@ -193,5 +181,11 @@ public class View implements ViewInterface {
         return calculator.getFlag();
     }
 
-
+    public void endProg(){
+        System.out.print("Завершение программы 'КАЛЬКУЛЯТОР'.\n\n");
+        intScanner.close();
+        stringScanner.close();
+        calculator.setFlag(false);
+        logCalc.setLogger("Завершение программы 'КАЛЬКУЛЯТОР'.");
+    }
 }

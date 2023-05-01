@@ -3,6 +3,7 @@ package org.example;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -18,15 +19,13 @@ public class RationalNumbers implements CalcInterface {
     private String num_st2;
     private Boolean flRn;
 
-
     private Integer numerator1;
     private Integer numerator2;
     private Integer denominator1;
     private Integer denominator2;
     private String resultRN;
 
-
-    public Integer joinNumerator(String st) {
+    Integer joinNumerator(String st) {
         // числитель из string
         StringBuilder str = new StringBuilder();
         str.append(st);
@@ -57,7 +56,7 @@ public class RationalNumbers implements CalcInterface {
         return result;
     }
 
-    public Integer joinDenomirator(String st) {
+    Integer joinDenomirator(String st) {
         // знаменатель из string
         StringBuilder str = new StringBuilder();
         str.append(st);
@@ -67,7 +66,7 @@ public class RationalNumbers implements CalcInterface {
         return numD;
     }
 
-    public ArrayList<Integer> primeFactorization(Integer in) {
+    ArrayList<Integer> primeFactorization(Integer in) {
         //разложение на простые множители
         ArrayList<Integer> n = new ArrayList<>();
         int count = 2;
@@ -82,7 +81,7 @@ public class RationalNumbers implements CalcInterface {
         return n;
     }
 
-    public Integer nod(Integer num1, Integer num2) {
+    Integer nod(Integer num1, Integer num2) {
         //Наибольший общий делитель НОД
         Integer in1 = Math.abs(num1);
         Integer in2 = Math.abs(num2);
@@ -154,7 +153,7 @@ public class RationalNumbers implements CalcInterface {
         return numNod;
     }
 
-    public Integer nok(Integer in1, Integer in2) {
+    Integer nok(Integer in1, Integer in2) {
         //Наименьшее общее кратное НОК
         int numNok;
 
@@ -230,7 +229,7 @@ public class RationalNumbers implements CalcInterface {
         return numNok;
     }
 
-    void infoOutputRN(Integer res, Integer nokInt) {
+    void infoOutputRN(@NotNull Integer res, @NotNull Integer nokInt) {
         resultRN = res.toString() + "/" + nokInt.toString();
 
         Integer a = res;

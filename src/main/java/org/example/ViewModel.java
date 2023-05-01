@@ -2,21 +2,16 @@ package org.example;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.logging.*;
-
 public class ViewModel implements ViewInterface {
 
     public void model_1(Integer n) {
         System.out.print(viewSign.HeadingPrint(n) + "\n");
         System.out.println("Формат записи: 0,2 или 2");
         System.out.print("Введите первое число -> ");
-        Double a = iScanner.nextDouble();
+        Double a = intScanner.nextDouble();
         calculator.setNum1(a);
         System.out.print("Введите второе число -> ");
-        Double b = iScanner.nextDouble();
+        Double b = intScanner.nextDouble();
         calculator.setNum2(b);
         resultCalc(n);
         System.out.println(numConvPrint(viewSign.SignPrint(n)));
@@ -26,7 +21,7 @@ public class ViewModel implements ViewInterface {
         System.out.print(viewSign.HeadingPrint(n) + "\n");
         System.out.println("Формат записи: 1 1/2, 1/2, 1/1, 2");
         System.out.print("Введите первое число -> ");
-        String a = scanner.nextLine();
+        String a = stringScanner.nextLine();
         if (a.length() > 1 ) {
             rationalNum.setNum_st1(a);
         }else {
@@ -35,7 +30,7 @@ public class ViewModel implements ViewInterface {
         }
         rationalNum.setNum_st1(a);
         System.out.print("Введите второе число -> ");
-        String b = scanner.nextLine();
+        String b = stringScanner.nextLine();
         if (b.length() > 1 ) {
             rationalNum.setNum_st2(b);
         }else {
@@ -50,12 +45,12 @@ public class ViewModel implements ViewInterface {
         System.out.print(viewSign.HeadingPrint(n) + "\n");
         System.out.println("Формат записи: 4+3i или 3i-4");
         System.out.print("Введите первое число -> ");
-        String a = scanner.nextLine();
+        String a = stringScanner.nextLine();
         complexNum.setFunction_1(a);
 
         rationalNum.setNum_st1(a);
         System.out.print("Введите второе число -> ");
-        String b = scanner.nextLine();
+        String b = stringScanner.nextLine();
         complexNum.setFunction_2(b);
 
         resultCalcCN(n);

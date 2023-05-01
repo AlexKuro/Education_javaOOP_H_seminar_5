@@ -11,7 +11,7 @@ public class ViewRational implements ViewInterface{
             System.out.println("\tВыход в главное меню  - - нажмите '8'");
             System.out.println("\tВыход из программы  - - - нажмите '9'");
             System.out.print("\nВведите число -> ");
-            n = iScanner.nextInt();
+            n = intScanner.nextInt();
             return n;
         }
 }

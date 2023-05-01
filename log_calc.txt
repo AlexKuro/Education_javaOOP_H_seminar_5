@@ -1,15 +1,10 @@
-апр. 26, 2023 10:52:17 PM org.example.Log setLogger
+мая 01, 2023 10:28:51 PM org.example.Log setLogger
 INFO: Запуск программы 'КАЛЬКУЛЯТОР'.
-апр. 26, 2023 10:53:04 PM org.example.Log setLogger
-INFO: Сложение чисел:  24 + 56 = 80
-апр. 26, 2023 10:53:24 PM org.example.Log setLogger
-INFO: Сложение чисел:  45.9  + 4.0 = 49.9
-апр. 26, 2023 10:54:01 PM org.example.Log setLogger
-INFO: Сложение чисел:  1 1/2  + 2/3 = 13/6
-апр. 26, 2023 10:54:58 PM org.example.Log setLogger
-INFO: Сложение чисел:  (4+5i)  + (3+3i) = 7 + 8i
-апр. 26, 2023 10:55:23 PM org.example.Log setLogger
-INFO: Деление чисел:  (4+3i)  / (3i-4) = (4+3i) * (4+3i) / (3i-4) * (4+3i) = 
-		 = 16 + 12i + 12i + 9i^2 / -16 + 12i - 12i + 9i^2 = 16 + 24i - 9 / -16 - 9 = 7 + 24i / -25
-апр. 26, 2023 10:55:32 PM org.example.Log setLogger
+мая 01, 2023 10:29:40 PM org.example.Log setLogger
+INFO: Бинарный перевод: 23455 --> 101101110011111
+мая 01, 2023 10:29:52 PM org.example.Log setLogger
+INFO: Бинарный перевод: 234.33 --> 11101010.010101000111
+мая 01, 2023 10:30:10 PM org.example.Log setLogger
+INFO: Бинарный перевод: Привет! --> 10000011111 10001000000 10000111000 10000110010 10000110101 10001000010 100001 
+мая 01, 2023 10:30:14 PM org.example.Log setLogger
 INFO: Завершение программы 'КАЛЬКУЛЯТОР'.

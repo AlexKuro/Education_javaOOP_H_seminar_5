@@ -15,13 +15,7 @@ public class ComplexNumbers implements CalcInterface {
     private String funcDiv1;
     private String funcDiv2;
     private String funcDiv3;
-
     private String resultCN;
-
-    // z1 = 3+i,z2 = 5−2i   i^2
-    // 1 - вещественное число
-    // 2 - мнимое число
-    // 3 - число со степень 2 (рассмотрим пока этот вариант)
 
     int joinOperationsIndex(String function) {
         StringBuilder num1 = new StringBuilder();
@@ -62,7 +56,7 @@ public class ComplexNumbers implements CalcInterface {
         return s1;
     }
 
-    public int[] joinFunction(String funct) {
+    int[] joinFunction(String funct) {
         int s = joinOperationsIndex(funct);
         int sn = joinOperations(funct);
         int[] resfun = new int[2];

@@ -33,7 +33,6 @@ public class Calculator<T extends Number> implements CalcInterface{
         result = (bD.setScale(value, RoundingMode.HALF_UP)).doubleValue();
     }
 
-
     public void multiplications() {
         result = num1.doubleValue() * num2.doubleValue();
         BigDecimal bD = new BigDecimal(result);
@@ -48,7 +47,7 @@ public class Calculator<T extends Number> implements CalcInterface{
         result = (bD.setScale(value, RoundingMode.HALF_UP)).doubleValue();
     }
 
-    public String bin(Integer num) {
+    String bin(Integer num) {
         List<Integer> result = new ArrayList<>();
         List<Integer> reverse = new ArrayList<>();
         String st = "";
@@ -73,7 +72,7 @@ public class Calculator<T extends Number> implements CalcInterface{
         return st;
     }
 
-    public StringBuilder binPoint(Double num) {
+    StringBuilder binPoint(Double num) {
         StringBuilder stInt = new StringBuilder();
         stInt.append(num.doubleValue());
         int sInt = stInt.indexOf(".");
@@ -109,7 +108,7 @@ public class Calculator<T extends Number> implements CalcInterface{
         return result;
     }
 
-    public Double pointDouble(Double a) {
+    Double pointDouble(Double a) {
         StringBuilder st = new StringBuilder();
         st.append(a.doubleValue());
         int s = st.indexOf(".");
