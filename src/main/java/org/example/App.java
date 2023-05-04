@@ -1,9 +1,15 @@
 package org.example;
 
-import java.io.IOException;
-import java.util.logging.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class App implements ViewInterface{
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class App implements ViewInterface {
+    private Boolean flag;
+    private Boolean fl1 = true;
 
 
     public static void Start() {
@@ -11,8 +17,21 @@ public class App implements ViewInterface{
         logCalc.setLogger("Запуск программы 'КАЛЬКУЛЯТОР'.");
         do {
             view.interface_0();
-            view.choice_1(view.interface_1());
-        } while (view.end());
+            choice.choice_1(view.interface_1());
+        } while (app.end());
+    }
+
+    Boolean end() {
+        return getFlag();
+    }
+
+    public void endProg() {
+        System.out.print("Завершение программы 'КАЛЬКУЛЯТОР'.\n\n");
+        logCalc.setLogger("Завершение программы 'КАЛЬКУЛЯТОР'.");
+        intScanner.close();
+        stringScanner.close();
+        setFlag(false);
+        setFl1(false);
     }
 
 

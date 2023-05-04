@@ -3,13 +3,8 @@ package org.example;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -17,8 +12,6 @@ import java.util.Set;
 public class RationalNumbers implements CalcInterface {
     private String num_st1;
     private String num_st2;
-    private Boolean flRn;
-
     private Integer numerator1;
     private Integer numerator2;
     private Integer denominator1;
@@ -229,7 +222,7 @@ public class RationalNumbers implements CalcInterface {
         return numNok;
     }
 
-    void infoOutputRN(@NotNull Integer res, @NotNull Integer nokInt) {
+    void infoOutputRN(Integer res, Integer nokInt) {
         resultRN = res.toString() + "/" + nokInt.toString();
 
         Integer a = res;

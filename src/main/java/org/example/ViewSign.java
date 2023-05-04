@@ -20,4 +20,19 @@ public class ViewSign {
         return s;
     }
 
+    public String SignField(Integer n) {
+        String s = "";
+        if (n == 0) s = "\n\t- Главное меню - ";
+        if (n == 1) s = "\n\t- Простой калькулятор - ";
+        if (n == 11) s = "\n\t- Непростой калькулятор - ";
+        if (n == 2) s = "\n\t-  Рациональные числа - ";
+        if (n == 3) s = "\n\t-  Комплексные числа - ";
+        if (n == 4) s = "\n\t-  Бинарный перевод  -";
+        if (n == 5) s = "Введите ЧИСЛО тип Integer -> ";
+        if (n == 6) s = "Введите ЧИСЛО тип Double -> ";
+        if (n == 7) s = "Введите СИМВОЛ тип String -> ";
+        return s;
+    }
+
+
 }

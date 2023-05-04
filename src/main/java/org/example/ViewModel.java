@@ -7,12 +7,10 @@ public class ViewModel implements ViewInterface {
     public void model_1(Integer n) {
         System.out.print(viewSign.HeadingPrint(n) + "\n");
         System.out.println("Формат записи: 0,2 или 2");
-        System.out.print("Введите первое число -> ");
-        Double a = intScanner.nextDouble();
-        calculator.setNum1(a);
-        System.out.print("Введите второе число -> ");
-        Double b = intScanner.nextDouble();
-        calculator.setNum2(b);
+
+        calculator.setNum1(scann.scan_a());
+
+        calculator.setNum2(scann.scan_b());
         resultCalc(n);
         System.out.println(numConvPrint(viewSign.SignPrint(n)));
     }
@@ -20,20 +18,20 @@ public class ViewModel implements ViewInterface {
     public void model_2(Integer n) {
         System.out.print(viewSign.HeadingPrint(n) + "\n");
         System.out.println("Формат записи: 1 1/2, 1/2, 1/1, 2");
-        System.out.print("Введите первое число -> ");
-        String a = stringScanner.nextLine();
-        if (a.length() > 1 ) {
+
+        String a = scann.scan_strA();
+        if (a.length() > 1) {
             rationalNum.setNum_st1(a);
-        }else {
+        } else {
             a += "/" + "1";
             rationalNum.setNum_st1(a);
         }
         rationalNum.setNum_st1(a);
-        System.out.print("Введите второе число -> ");
-        String b = stringScanner.nextLine();
-        if (b.length() > 1 ) {
+
+        String b = scann.scan_strB();
+        if (b.length() > 1) {
             rationalNum.setNum_st2(b);
-        }else {
+        } else {
             b += "/" + "1";
             rationalNum.setNum_st2(b);
         }
@@ -44,17 +42,20 @@ public class ViewModel implements ViewInterface {
     public void model_3(Integer n) {
         System.out.print(viewSign.HeadingPrint(n) + "\n");
         System.out.println("Формат записи: 4+3i или 3i-4");
-        System.out.print("Введите первое число -> ");
-        String a = stringScanner.nextLine();
+        String a = scann.scan_strA();
         complexNum.setFunction_1(a);
-
         rationalNum.setNum_st1(a);
-        System.out.print("Введите второе число -> ");
-        String b = stringScanner.nextLine();
+        String b = scann.scan_strB();
         complexNum.setFunction_2(b);
-
         resultCalcCN(n);
         System.out.println(numConvPrintCN(viewSign.SignPrint(n)));
+    }
+
+    public void model_4(Integer n) {
+        Object q = scann.scan_odj(n);
+        String st = "Бинарный перевод: " + q + " --> " + binCalc.binObg(q);
+        System.out.println(st);
+        logCalc.setLogger(st);
     }
 
     void resultCalc(Integer n) {
@@ -169,7 +170,7 @@ public class ViewModel implements ViewInterface {
         return st;
     }
 
-    String numConvPrintRN(@NotNull String sign) {
+    String numConvPrintRN(String sign) {
         String st = "";
         if (sign.equals("Сложение чисел:")) {
             st = sign
@@ -206,13 +207,14 @@ public class ViewModel implements ViewInterface {
                     + " / "
                     + rationalNum.getNum_st2()
                     + " = "
-                    + rationalNum.getResultRN();;
+                    + rationalNum.getResultRN();
+            ;
         }
         logCalc.setLogger(st);
         return st;
     }
 
-    String numConvPrintCN(@NotNull String sign) {
+    String numConvPrintCN(String sign) {
         String st = "";
         if (sign.equals("Сложение чисел:")) {
             st = sign
